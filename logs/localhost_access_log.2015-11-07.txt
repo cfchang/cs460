@@ -1,0 +1,17 @@
+127.0.0.1 - - [07/Nov/2015:19:06:47 -0500] "GET /photoshare HTTP/1.1" 302 -
+127.0.0.1 - - [07/Nov/2015:19:06:48 -0500] "GET /photoshare/ HTTP/1.1" 200 494
+127.0.0.1 - - [07/Nov/2015:19:06:50 -0500] "GET /photoshare3 HTTP/1.1" 302 -
+127.0.0.1 - - [07/Nov/2015:19:06:50 -0500] "GET /photoshare3/ HTTP/1.1" 200 494
+127.0.0.1 - - [07/Nov/2015:19:06:57 -0500] "POST /photoshare3/j_security_check HTTP/1.1" 303 -
+127.0.0.1 - test@bu.edu [07/Nov/2015:19:07:00 -0500] "GET /photoshare3/ HTTP/1.1" 200 955
+127.0.0.1 - test@bu.edu [07/Nov/2015:19:07:20 -0500] "GET /photoshare3/searchfriend.jsp HTTP/1.1" 200 517
+127.0.0.1 - test@bu.edu [07/Nov/2015:19:07:25 -0500] "GET /photoshare3/listallfriends.jsp? HTTP/1.1" 500 4677
+127.0.0.1 - test@bu.edu [07/Nov/2015:19:11:47 -0500] "GET /photoshare3/listallfriends.jsp? HTTP/1.1" 500 4677
+127.0.0.1 - - [07/Nov/2015:19:11:47 -0500] "GET /favicon.ico HTTP/1.1" 200 21630
+127.0.0.1 - - [07/Nov/2015:19:12:58 -0500] "GET /photoshare3/ HTTP/1.1" 200 494
+127.0.0.1 - - [07/Nov/2015:19:13:05 -0500] "POST /photoshare3/j_security_check HTTP/1.1" 303 -
+127.0.0.1 - test@bu.edu [07/Nov/2015:19:13:06 -0500] "GET /photoshare3/ HTTP/1.1" 200 955
+127.0.0.1 - test@bu.edu [07/Nov/2015:19:13:09 -0500] "GET /photoshare3/searchfriend.jsp HTTP/1.1" 200 517
+127.0.0.1 - test@bu.edu [07/Nov/2015:19:13:11 -0500] "GET /photoshare3/listallfriends.jsp? HTTP/1.1" 500 4677
+127.0.0.1 - - [07/Nov/2015:19:25:19 -0500] "GET /photoshare3 HTTP/1.1" 302 -
+127.0.0.1 - test@bu.edu [07/Nov/2015:19:25:19 -0500] "GET /photoshare3/ HTTP/1.1" 200 955

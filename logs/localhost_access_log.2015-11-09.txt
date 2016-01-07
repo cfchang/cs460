@@ -1,0 +1,6 @@
+127.0.0.1 - - [09/Nov/2015:11:51:53 -0500] "GET /photoshare HTTP/1.1" 302 -
+127.0.0.1 - - [09/Nov/2015:11:51:53 -0500] "GET /photoshare/ HTTP/1.1" 200 494
+127.0.0.1 - - [09/Nov/2015:14:40:37 -0500] "GET /photoshare HTTP/1.1" 302 -
+127.0.0.1 - - [09/Nov/2015:14:40:37 -0500] "GET /photoshare/ HTTP/1.1" 200 494
+127.0.0.1 - - [09/Nov/2015:14:40:39 -0500] "GET /photoshare/main.jsp HTTP/1.1" 200 483
+127.0.0.1 - - [09/Nov/2015:14:40:45 -0500] "GET /photoshare/newuser.jsp HTTP/1.1" 200 1019

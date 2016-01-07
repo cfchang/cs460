@@ -1,0 +1,9 @@
+[2015-11-08 13:35:10] [info]  [ 9060] Commons Daemon procrun (1.0.15.0 64-bit) started
+[2015-11-08 13:35:10] [info]  [ 9060] Running 'Tomcat8' Service...
+[2015-11-08 13:35:10] [info]  [ 8844] Starting service...
+[2015-11-08 13:35:12] [info]  [ 8844] Service started in 1547 ms.
+[2015-11-10 18:49:38] [info]  [ 1356] Console SHUTDOWN event signaled
+[2015-11-10 18:49:39] [info]  [ 1356] Stopping service...
+[2015-11-10 18:49:40] [info]  [ 1356] Service stop thread completed.
+[2015-11-10 18:49:41] [info]  [ 9060] Run service finished.
+[2015-11-10 18:49:41] [info]  [ 9060] Commons Daemon procrun finished

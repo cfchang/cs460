@@ -1,0 +1,163 @@
+07-Nov-2015 19:06:22.777 SEVERE [localhost-startStop-1] org.apache.tomcat.util.descriptor.web.SecurityConstraint.findUncoveredHttpMethods For security constraints with URL pattern [/someOtherProtectedPage.jsp] only the HTTP methods [POST GET] are covered. All other methods are uncovered.
+07-Nov-2015 19:06:22.777 SEVERE [localhost-startStop-1] org.apache.tomcat.util.descriptor.web.SecurityConstraint.findUncoveredHttpMethods For security constraints with URL pattern [/index.jsp] only the HTTP methods [POST GET] are covered. All other methods are uncovered.
+07-Nov-2015 19:06:23.257 SEVERE [localhost-startStop-1] org.apache.tomcat.util.descriptor.web.SecurityConstraint.findUncoveredHttpMethods For security constraints with URL pattern [/someOtherProtectedPage.jsp] only the HTTP methods [POST GET] are covered. All other methods are uncovered.
+07-Nov-2015 19:06:23.257 SEVERE [localhost-startStop-1] org.apache.tomcat.util.descriptor.web.SecurityConstraint.findUncoveredHttpMethods For security constraints with URL pattern [/index.jsp] only the HTTP methods [POST GET] are covered. All other methods are uncovered.
+07-Nov-2015 19:06:24.089 SEVERE [localhost-startStop-1] org.apache.tomcat.util.descriptor.web.SecurityConstraint.findUncoveredHttpMethods For security constraints with URL pattern [/someOtherProtectedPage.jsp] only the HTTP methods [POST GET] are covered. All other methods are uncovered.
+07-Nov-2015 19:06:24.089 SEVERE [localhost-startStop-1] org.apache.tomcat.util.descriptor.web.SecurityConstraint.findUncoveredHttpMethods For security constraints with URL pattern [/index.jsp] only the HTTP methods [POST GET] are covered. All other methods are uncovered.
+07-Nov-2015 19:06:26.070 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+07-Nov-2015 19:06:26.071 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+07-Nov-2015 19:07:25.185 SEVERE [http-apr-11408-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/photoshare3] threw exception [An exception occurred processing JSP page /listallfriends.jsp at line 25
+
+22:         <%
+23:   	    NewUserDao newUserDao = new NewUserDao();
+24: 	    IsFriendsDao newIsFriendsDao = new IsFriendsDao();
+25: 	    int myID = newUserDao.getID(request.getUserPrincipal().getName());
+26:             List<Integer> myFriendIds = newIsFriendsDao.allFriends(myID);
+27:             for (Integer myFriendId : myFriendIds) {
+28: 		String temp = newUserDao.getUsersName(myFriendId);
+
+
+Stacktrace:] with root cause
+ java.lang.AbstractMethodError: com.mysql.jdbc.Connection.isValid(I)Z
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingConnection.isValid(DelegatingConnection.java:917)
+	at org.apache.tomcat.dbcp.dbcp2.PoolableConnection.validate(PoolableConnection.java:282)
+	at org.apache.tomcat.dbcp.dbcp2.PoolableConnectionFactory.validateConnection(PoolableConnectionFactory.java:356)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2306)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2289)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:2038)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1532)
+	at edu.bu.cs.cs460.photoshare3.DbConnection.getConnection(DbConnection.java:30)
+	at edu.bu.cs.cs460.photoshare3.NewUserDao.getID(NewUserDao.java:186)
+	at org.apache.jsp.listallfriends_jsp._jspService(listallfriends_jsp.java:152)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:438)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:396)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:340)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2503)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2492)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+07-Nov-2015 19:11:47.237 SEVERE [http-apr-11408-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/photoshare3] threw exception [An exception occurred processing JSP page /listallfriends.jsp at line 25
+
+22:         <%
+23:   	    NewUserDao newUserDao = new NewUserDao();
+24: 	    IsFriendsDao newIsFriendsDao = new IsFriendsDao();
+25: 	    int myID = newUserDao.getID(request.getUserPrincipal().getName());
+26:             List<Integer> myFriendIds = newIsFriendsDao.allFriends(myID);
+27:             for (Integer myFriendId : myFriendIds) {
+28: 		String temp = newUserDao.getUsersName(myFriendId);
+
+
+Stacktrace:] with root cause
+ java.lang.AbstractMethodError: com.mysql.jdbc.Connection.isValid(I)Z
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingConnection.isValid(DelegatingConnection.java:917)
+	at org.apache.tomcat.dbcp.dbcp2.PoolableConnection.validate(PoolableConnection.java:282)
+	at org.apache.tomcat.dbcp.dbcp2.PoolableConnectionFactory.validateConnection(PoolableConnectionFactory.java:356)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2306)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2289)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:2038)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1532)
+	at edu.bu.cs.cs460.photoshare3.DbConnection.getConnection(DbConnection.java:30)
+	at edu.bu.cs.cs460.photoshare3.NewUserDao.getID(NewUserDao.java:186)
+	at org.apache.jsp.listallfriends_jsp._jspService(listallfriends_jsp.java:152)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:438)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:396)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:340)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2503)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2492)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+07-Nov-2015 19:12:49.412 SEVERE [localhost-startStop-2] org.apache.tomcat.util.descriptor.web.SecurityConstraint.findUncoveredHttpMethods For security constraints with URL pattern [/someOtherProtectedPage.jsp] only the HTTP methods [POST GET] are covered. All other methods are uncovered.
+07-Nov-2015 19:12:49.413 SEVERE [localhost-startStop-2] org.apache.tomcat.util.descriptor.web.SecurityConstraint.findUncoveredHttpMethods For security constraints with URL pattern [/index.jsp] only the HTTP methods [POST GET] are covered. All other methods are uncovered.
+07-Nov-2015 19:13:11.321 SEVERE [32] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [/photoshare3] threw exception [An exception occurred processing JSP page /listallfriends.jsp at line 25
+
+22:         <%
+23:   	    NewUserDao newUserDao = new NewUserDao();
+24: 	    IsFriendsDao newIsFriendsDao = new IsFriendsDao();
+25: 	    int myID = newUserDao.getID(request.getUserPrincipal().getName());
+26:             List<Integer> myFriendIds = newIsFriendsDao.allFriends(myID);
+27:             for (Integer myFriendId : myFriendIds) {
+28: 		String temp = newUserDao.getUsersName(myFriendId);
+
+
+Stacktrace:] with root cause
+ java.lang.AbstractMethodError: com.mysql.jdbc.Connection.isValid(I)Z
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingConnection.isValid(DelegatingConnection.java:917)
+	at org.apache.tomcat.dbcp.dbcp2.PoolableConnection.validate(PoolableConnection.java:282)
+	at org.apache.tomcat.dbcp.dbcp2.PoolableConnectionFactory.validateConnection(PoolableConnectionFactory.java:356)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.validateConnectionFactory(BasicDataSource.java:2306)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:2289)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:2038)
+	at org.apache.tomcat.dbcp.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1532)
+	at edu.bu.cs.cs460.photoshare3.DbConnection.getConnection(DbConnection.java:30)
+	at edu.bu.cs.cs460.photoshare3.NewUserDao.getID(NewUserDao.java:186)
+	at org.apache.jsp.listallfriends_jsp._jspService(listallfriends_jsp.java:152)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:438)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:396)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:340)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:239)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:217)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:616)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:673)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2503)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2492)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
